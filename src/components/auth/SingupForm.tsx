@@ -10,7 +10,11 @@ import React from "react";
 
 import { useForm, Controller } from "react-hook-form";
 
-function SinginForm() {
+import { useRouter } from "next/router";
+
+function SingunForm() {
+
+  const router = useRouter();
   const {
     control,
     handleSubmit,
@@ -23,8 +27,24 @@ function SinginForm() {
     },
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      const response = await fetch("http://localhost:3030/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+      console.log("Form submitted successfully");
+      router.push("");
+    } catch (error) {
+      console.log("Error submitting form");
+    }
   });
 
   return (
@@ -126,10 +146,12 @@ function SinginForm() {
           </Text>
         )}
 
-        <Button type="submit" mt="4">Sign Up</Button>
+        <Button type="submit" mt="4">
+          Sign Up
+        </Button>
       </Flex>
     </form>
   );
 }
 
-export default SinginForm;
+export default SingunForm;

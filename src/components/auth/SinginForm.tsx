@@ -5,6 +5,8 @@ import { Button, Flex, TextField, Text } from "@radix-ui/themes";
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 
+import axios from "axios"; // Importa axios
+
 function SinginForm() {
   const {
     control,
@@ -17,8 +19,31 @@ function SinginForm() {
     },
   });
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3030/users?email=${data.email}`
+      );
+      const user = response.data[0];
+
+      if (!user) {
+        // Si no se encuentra el usuario
+        alert("Usuario no encontrado");
+        return;
+      }
+
+      if (user.password !== data.password) {
+        // Si la contraseña no coincide
+        alert("Contraseña incorrecta");
+        return;
+      }
+
+      // Si las credenciales son válidas, podrías realizar alguna acción, como redirigir al usuario a otra página
+      alert("Inicio de sesión exitoso!");
+      //router.push('/')
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
+    }
   });
 
   return (
@@ -90,7 +115,9 @@ function SinginForm() {
           </Text>
         )}
 
-        <Button type="submit" mt="4">Sign In</Button>
+        <Button type="submit" mt="4">
+          Sign In
+        </Button>
       </Flex>
     </form>
   );
