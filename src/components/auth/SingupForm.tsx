@@ -10,11 +10,7 @@ import React from "react";
 
 import { useForm, Controller } from "react-hook-form";
 
-import { useRouter } from "next/router";
-
 function SingunForm() {
-
-  const router = useRouter();
   const {
     control,
     handleSubmit,
@@ -41,7 +37,7 @@ function SingunForm() {
         throw new Error("Failed to submit form");
       }
       console.log("Form submitted successfully");
-      router.push("");
+      window.location.href = "/auth/login";
     } catch (error) {
       console.log("Error submitting form");
     }
@@ -50,7 +46,7 @@ function SingunForm() {
   return (
     <form onSubmit={onSubmit}>
       <Flex direction="column" gap="2">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Nombre</label>
         <TextField.Root>
           <TextField.Slot>
             <PersonIcon height="16px" width="16px" />
@@ -60,7 +56,7 @@ function SingunForm() {
             control={control}
             rules={{
               required: {
-                message: "Name is requiered",
+                message: "El nombre es requerido",
                 value: true,
               },
             }}
@@ -68,7 +64,7 @@ function SingunForm() {
               return (
                 <TextField.Input
                   type="text"
-                  placeholder="Write your name"
+                  placeholder="Escribe tu nombre"
                   autoFocus
                   {...field}
                 />
@@ -93,7 +89,7 @@ function SingunForm() {
             control={control}
             rules={{
               required: {
-                message: "Email is requiered",
+                message: "Email es requerido",
                 value: true,
               },
             }}
@@ -115,7 +111,7 @@ function SingunForm() {
           </Text>
         )}
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Contraseña</label>
         <TextField.Root>
           <TextField.Slot>
             <LockClosedIcon height="16px" width="16px" />
@@ -125,7 +121,7 @@ function SingunForm() {
             control={control}
             rules={{
               required: {
-                message: "Password is requiered",
+                message: "Contraseña es requerido",
                 value: true,
               },
             }}
@@ -147,7 +143,7 @@ function SingunForm() {
         )}
 
         <Button type="submit" mt="4">
-          Sign Up
+          Registrarse
         </Button>
       </Flex>
     </form>

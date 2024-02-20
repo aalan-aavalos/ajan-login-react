@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Card, Heading, Flex, Text, Link } from "@radix-ui/themes";
-import SinginForm from "@/components/auth/SinginForm";
+import SinginForm from "@/app/components/auth/SinginForm";
 import NavLink from "next/link";
 
 function LoginPage() {
@@ -9,14 +9,14 @@ function LoginPage() {
       <Container size="1" height="100%" className="p-3 md:p0">
         <Flex className="h-screen w-full items-center">
           <Card className="w-full p7">
-            <Heading>Sing In</Heading>
+            <Heading>Ingresar</Heading>
 
             <SinginForm />
 
             <Flex justify="between" my="4">
-              <Text>Don't have an Account?</Text>
+              <Text>¿No tienes una cuenta</Text>
               <Link asChild>
-                <NavLink href="/auth/register" passHref>Sing Up</NavLink>
+                <NavLink href="/auth/register" passHref>Registrarse</NavLink>
               </Link>
             </Flex>
           </Card>

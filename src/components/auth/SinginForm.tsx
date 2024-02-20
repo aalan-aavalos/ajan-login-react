@@ -40,7 +40,7 @@ function SinginForm() {
 
       // Si las credenciales son válidas, podrías realizar alguna acción, como redirigir al usuario a otra página
       alert("Inicio de sesión exitoso!");
-      //router.push('/')
+      window.location.href = "/auth/home";
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }
@@ -59,7 +59,7 @@ function SinginForm() {
             control={control}
             rules={{
               required: {
-                message: "Email is required",
+                message: "Email es requerido",
                 value: true,
               },
             }}
@@ -82,7 +82,7 @@ function SinginForm() {
           </Text>
         )}
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Contraseña</label>
         <TextField.Root>
           <TextField.Slot>
             <LockClosedIcon height="16px" width="16px" />
@@ -116,7 +116,7 @@ function SinginForm() {
         )}
 
         <Button type="submit" mt="4">
-          Sign In
+          Ingresar
         </Button>
       </Flex>
     </form>
