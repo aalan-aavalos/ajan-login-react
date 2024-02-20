@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Card, Heading, Flex, Text, Link } from "@radix-ui/themes";
-import SinginForm from "@/app/components/auth/SinginForm";
+import SinginForm from "@/components/auth/SinginForm";
 import NavLink from "next/link";
 
 function LoginPage() {

@@ -1,4 +1,4 @@
-import SingupForm from "@/app/components/auth/SingupForm";
+import SingupForm from "@/components/auth/SingupForm";
 import { Card, Container, Flex, Heading, Link, Text } from "@radix-ui/themes";
 import React from "react";
 import NavLink from "next/link";
