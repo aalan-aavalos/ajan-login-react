@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AJAN SHOP
+Proyecto basico de una pagina de login y registro.
+<br>
+Herramientas usadas:
+- NextJS 14
+- RadixUI
+- Radix Icon
+- React Hook Form
+- Json-Server
+- Axios
 
-## Getting Started
+## Datos de autor
+- Autor: **Alan de Jesus Avalos Negrete**
+- Materia: **Aplicaciones Web para I4.0**
+- Unidad: **Unidad II Frameworks para Web empresarial**
+- Grupo: **GDS0551**
 
-First, run the development server:
+## Instalación
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Usa el siguiente comando: `git clone https://github.com/aalan-aavalos/ajan.git`, desde la terminal de git para clonar el proyecto a una carpeta.
+2. Ejecuta el comando: `npm install`, desde la terminal de la carpeta del proyecto para instalar las dependencias faltantes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ejecución
+1. Abre una terminal en el proyecto
+2. Ejecuta el comando: `npm run dev`, este comando por defecto ejecutara el proyecto por el puerto `3000`.
+3. Ejecuta el comando `json-serve --watch db.json` para ejecutar el Json-Server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Datos guardados en JSON-SERVER
+- Usuario: **Alan**
+- Email: **a@a.a**
+- Contraseña: **1234**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Uso
+1. En el navegador ingresa la ruta `http://localhost:3000/auth/login` este por defecto te abrira la pagina de login.
+2. Para ingresar un nuevo usuario da click en el enlace llamado `Registrarse`.
+3. Ingresa los datos necesarios y presiona el boton de `Registrar`.
+4. Ingresa los datos que agregaste en el login y presiona el boton de `Ingresar`.
+5. Una vez validados los datos te enviara a la pagina de home donde podras salir con el boton de `Salir`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Datos extras
+- Cada campo validara que se hallan ingresado datos y en el caso de el registro de contraseñas que estas sean iguales.
